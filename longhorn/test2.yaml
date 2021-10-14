@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: test-volv-1tb-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: longhorn-1tb
+  resources:
+    requests:
+      storage: 1Ti

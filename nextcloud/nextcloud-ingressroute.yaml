@@ -1,0 +1,41 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: nextcloud-redirect
+spec:
+  redirectScheme:
+    scheme: https
+    permanent: true
+    port: "443"
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: nextcloud-http-ingress
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`cloud.kaubalegacy.com`)
+      kind: Rule
+      middlewares:
+        - name: nextcloud-redirect
+      services:
+        - name: nextcloud-server
+          port: 80
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: nextcloud-ingress
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`cloud.kaubalegacy.com`)
+      kind: Rule
+      services:
+        - name: nextcloud-server
+          port: 80
+  tls:
+    certResolver: letsencrypt

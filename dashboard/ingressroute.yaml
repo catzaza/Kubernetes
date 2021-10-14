@@ -1,0 +1,16 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: ingress
+  namespace: kubernetes-dashboard
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`K3S-Dev.kaubalegacy.com`)
+      kind: Rule
+      services:
+        - name: kubernetes-dashboard
+          port: 443
+      tls:
+        certResolver: letsencrypt
