@@ -1,0 +1,57 @@
+---
+- name: Unhold kubeadm
+  dpkg_selections:
+    name: kubeadm
+    selection: install
+
+- name: Upgrade kubeadm
+  apt:
+    name: kubeadm=1.24.1-00
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+    force_apt_get: true
+
+- name: Hold kubeadm
+  dpkg_selections:
+    name: kubeadm
+    selection: hold
+
+- name: Run kubeadm upgrade on first master
+  command: >-
+    {{ bin_dir }}/kubeadm upgrade apply v1.24.1
+    when: inventory_hostname == "{{ groups['kube-master'][0] }}"
+
+- name: Run kubeadm upgrade all other nodes
+  command: >-
+    {{ bin_dir }}/kubeadm upgrade node
+    when: inventory_hostname == !"{{ groups['kube-master'][0] }}"
+
+- name: Unhold kubelet and kubectl
+  dpkg_selections:
+    name: kubeadm
+    selection: install
+
+- name: Upgrade kubelet and kubectl
+  apt:
+    name: kubeadm=1.24.1-00
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+    force_apt_get: true
+
+- name: Hold kubelet and kubectl
+  dpkg_selections:
+    name: kubeadm
+    selection: hold
+
+
+  #- name: Check if reboot is required
+  #  stat:
+  #    path: /var/run/reboot-required
+  #  register: reboot_required
+
+  #- name: Reboot the server
+  #  reboot:
+  #    post_reboot_delay: 30
+  #  when: reboot_required.stat.exists

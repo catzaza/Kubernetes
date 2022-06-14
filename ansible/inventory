@@ -1,0 +1,25 @@
+[all:vars]
+ansible_user='auser'
+ansible_become=yes
+ansible_become_method=sudo
+ansible_python_interpreter='/usr/bin/env python3'
+
+[servers]
+192.168.57.1
+192.168.57.2
+192.168.57.3
+192.168.57.4
+192.168.57.5
+192.168.57.6
+192.168.57.7
+
+[kube-master]
+192.168.57.1
+192.168.57.4
+192.168.57.7
+
+[kube-node]
+192.168.57.2
+192.168.57.3
+192.168.57.5
+192.168.57.6
