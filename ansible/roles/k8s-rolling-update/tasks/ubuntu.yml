@@ -27,22 +27,33 @@
     {{ bin_dir }}/kubeadm upgrade node
     when: inventory_hostname == !"{{ groups['kube-master'][0] }}"
 
-- name: Unhold kubelet and kubectl
+- name: Unhold kubelet
   dpkg_selections:
-    name: kubeadm
+    name: kubelet
     selection: install
+
+- name: Unhold kubectl
+  dpkg_selections:
+    name: kubectl
 
 - name: Upgrade kubelet and kubectl
   apt:
-    name: kubeadm=1.24.1-00
+    pkg:
+          - kubectl=1.24.1
+          - kubelet=1.24.1
     state: present
     update_cache: true
     cache_valid_time: 3600
     force_apt_get: true
 
-- name: Hold kubelet and kubectl
+- name: Hold kubelet
   dpkg_selections:
     name: kubeadm
+    selection: hold
+
+- name: Hold kubectl
+  dpkg_selections:
+    name: kubectl
     selection: hold
 
 - name: Reboot the server
