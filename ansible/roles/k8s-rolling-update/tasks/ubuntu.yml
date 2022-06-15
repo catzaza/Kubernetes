@@ -17,15 +17,21 @@
     name: kubeadm
     selection: hold
 
-- name: Run kubeadm upgrade on first master
-  command: >-
-    {{ bin_dir }}/kubeadm upgrade apply v1.24.1
-    when: inventory_hostname == "{{ groups['kube-master'][0] }}"
+#- name: Run kubeadm upgrade on first master
+#  ansible.builtin.expect:
+#    command: >-
+#      /usr/bin/kubeadm upgrade apply v1.24.1
+#      when: inventory_hostname == "{{ groups['kube-master'][0] }}"
+#    responses:
+#      - '[upgrade/confirm] Are you sure you want to proceed with the upgrade? [y/N]:': 'y'
 
 - name: Run kubeadm upgrade all other nodes
-  command: >-
-    {{ bin_dir }}/kubeadm upgrade node
-    when: inventory_hostname == !"{{ groups['kube-master'][0] }}"
+  ansible.builtin.expect:
+    command: >-
+      /usr/bin/kubeadm upgrade node
+      when: inventory_hostname == !"{{ groups['kube-master'][0] }}"
+    responses:
+      - '[upgrade/confirm] Are you sure you want to proceed with the upgrade? [y/N]:': 'y'
 
 - name: Unhold kubelet
   dpkg_selections:
@@ -39,8 +45,8 @@
 - name: Upgrade kubelet and kubectl
   apt:
     pkg:
-          - kubectl=1.24.1
-          - kubelet=1.24.1
+          - kubectl=1.24.1-00
+          - kubelet=1.24.1-00
     state: present
     update_cache: true
     cache_valid_time: 3600
@@ -59,6 +65,15 @@
 - name: Reboot the server
   reboot:
     post_reboot_delay: 30
+
+- name: Wait for the reboot and reconnect 
+  wait_for:
+    port: 22
+    host: '{{ kube_override_hostname|default(inventory_hostname) }}'
+    search_regex: OpenSSH
+    delay: 10
+    timeout: 60
+  connection: local
 #  when: reboot_required.stat.exists
 
   #- name: Check if reboot is required

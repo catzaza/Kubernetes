@@ -9,4 +9,5 @@
 
   roles:
     - k8s-rolling-update
-
+  vars: 
+    - bin_dir: /usr/local/bin

@@ -1,7 +1,10 @@
 ---
 - name: Get the node's details
   command: >-
-    {{ bin_dir }}/kubectl get node
+    {{ bin_dir }}/kubectl
+    --kubeconfig /home/auser/.kube/config 
+    get 
+    node
     {{ kube_override_hostname|default(inventory_hostname) }}
     -o json
   register: kubectl_get_node
@@ -20,7 +23,7 @@
       include_tasks: drain.yml
 
     - name: Upgrade the Operating System
-      include_tasks: "{{ ansible_distribution }}.yml"
+      include_tasks: ubuntu.yml
 
     - name: Uncordon node
       include_tasks: uncordon.yml
