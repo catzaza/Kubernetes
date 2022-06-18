@@ -1,0 +1,10 @@
+- hosts:
+    - all
+  become: true
+  become_user: root
+
+- name: Remove Kubenetes
+  command: >-
+    /usr/bin/kubeadm
+    --kubeconfig /home/auser/.kube/config
+    reset

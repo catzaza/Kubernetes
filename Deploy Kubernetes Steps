@@ -1,0 +1,25 @@
+1. Initialize cluster on first master node
+1a. Build kubeconfig
+1b. Install calico
+2. Join cluster on other master nodes
+3. Join cluster on worker nodes
+
+
+
+sudo kubeadm init --pod-network-cidr=191.168.0.0/16 --control-plane-endpoint=k8s.kaubalegacy.com --upload-certs
+
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+control-plane
+kubeadm join k8s.kaubalegacy.com:6443 --token bji96z.1ysneivh1183ahxt \
+	--discovery-token-ca-cert-hash sha256:9bc1fe9de85d122ed77e709a3dd26c5dc61329d948d6cc8c42f59ddf32f99f38 \
+	--control-plane --certificate-key 250aeb4feb49e8b1b3516e0877c77072a9b0fe679b8e1f5fa0981d5a4d481a6a
+	
+worker node
+kubeadm join k8s.kaubalegacy.com:6443 --token bji96z.1ysneivh1183ahxt \
+	--discovery-token-ca-cert-hash sha256:9bc1fe9de85d122ed77e709a3dd26c5dc61329d948d6cc8c42f59ddf32f99f38
+	
+	
+
