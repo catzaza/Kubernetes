@@ -2,13 +2,51 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: nginx
-  namespace: default
+  namespace: test
 spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`nginx.example.com`)
+    - match: Host(`nginx.example.com`) && PathPrefix(`/blue`)
       kind: Rule
       services:
-        - name: nginx-deploy-blue
+        - name: nginx-svc-blue
           port: 80
+      middlewares:
+        - name: test-replacepath
+    - match: Host(`nginx.example.com`) && PathPrefix(`/green`)
+      kind: Rule
+      services:
+        - name: nginx-svc-green
+          port: 80
+      middlewares:
+        - name: test-replacepath
+        - name: test-auth
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: test-replacepath
+  namespace: test
+spec:
+  replacePath:
+    path: /
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: test-auth
+  namespace: test
+spec:
+  basicAuth:
+    secret: authsecret
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: authsecret
+  namespace: test
+data:
+  users: dXNlcjokYXByMSROT1VjVkQ5OSQ3OGh3UWJkSS9DS0guNElqUTA2cFoxCgo=
+  # user:password
+
