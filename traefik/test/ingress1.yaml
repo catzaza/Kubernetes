@@ -3,25 +3,39 @@ kind: Ingress
 metadata:
   name: ingress-resource-1
   namespace: test
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
   rules:
   - host: nginx.example.com
+    Middleware:
+      - name: test-replacepath
     http:
       paths:
       - path: /blue
         pathType: Prefix
         backend:
           service:
-            name: nginx-deploy-blue
+            name: nginx-svc-blue
             port: 
               number: 80
   - host: nginx.example.com
+    Middleware:
+      - name: test-replacepath
     http:
       paths:
       - path: /green
         pathType: Prefix
         backend:
           service:
-            name: nginx-deploy-green
+            name: nginx-svc-green
             port:
               number: 80
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: test-replacepath
+spec:
+  replacePath:
+    path: /

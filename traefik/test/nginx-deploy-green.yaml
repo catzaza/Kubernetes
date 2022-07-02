@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: nginx
+    app: nginx-green
   name: nginx-deploy-green
   namespace: test
 spec:
   replicas: 1
   selector:
     matchLabels:
-      run: nginx-green
+      app: nginx-green
   template:
     metadata:
       labels:
-        run: nginx-green
+        app: nginx-green
     spec:
       volumes:
       - name: webdata
@@ -35,13 +35,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-deploy-green
+  name: nginx-svc-green
   namespace: test
   labels:
-    run: nginx-deploy-green
+    app: nginx-green
 spec:
   ports:
   - port: 80
     protocol: TCP
   selector:
-    run: nginx-deploy-green
+    app: nginx-green
