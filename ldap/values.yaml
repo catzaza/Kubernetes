@@ -12,10 +12,10 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: ["harbor"]
-  storageClass: ""
-  ldapDomain: "example.org"
+  storageClass: "longhorn"
+  ldapDomain: "kaubalegacy.com"
   ## Default Passwords to use, stored as a secret. Not used if existingSecret is set.
-  adminPassword: Not@SecurePassw0rd
+  adminPassword: Theadminpassisthis5
   configPassword: Not@SecurePassw0rd
 
 ## @section Common parameters
@@ -95,7 +95,7 @@ service:
 # Use the env variables from https://github.com/osixia/docker-openldap#beginner-guide
 env:
  LDAP_LOG_LEVEL: "256"
- LDAP_ORGANISATION: "Example Inc."
+ LDAP_ORGANISATION: "Kauba Services, LLC"
  LDAP_READONLY_USER: "false"
  LDAP_READONLY_USER_USERNAME: "readonly"
  LDAP_READONLY_USER_PASSWORD: "readonly"
@@ -151,10 +151,10 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  # storageClass: "standard-singlewriter"
+  storageClass: "longhorn"
   # existingClaim: openldap-pvc
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   size: 8Gi
 
 ## @param customLivenessProbe Custom livenessProbe that overrides the default one
@@ -418,7 +418,7 @@ ltb-passwd:
   ldap:
     #server: ldaps://openldap-openldap-stack-ha
     # existingSecret: openldaptest
-    #bindDN: cn=admin,dc=example,dc=org
+    bindDN: cn=admin,dc=kaubalegacy,dc=com
     bindPWKey: LDAP_ADMIN_PASSWORD
 
 phpldapadmin:
