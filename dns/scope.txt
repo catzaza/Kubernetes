@@ -1,0 +1,10 @@
+Services:
+Authoritative Server
+- pdns-server
+Recursive Server
+- pdns-recursor
+Database
+- mysql
+Graphical Manager
+- powerdns-admin
+
