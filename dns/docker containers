@@ -1,0 +1,1134 @@
+pdns-server
+[
+    {
+        "Id": "8fece13a39c69693cb05b3364f1c8f26d5fc70116a59a7de98239ad701dd75d6",
+        "Created": "2021-07-02T15:19:58.586361378Z",
+        "Path": "/entrypoint.sh",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 2453,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2022-06-18T13:57:29.214300639Z",
+            "FinishedAt": "2022-06-18T09:57:13.657795716-04:00"
+        },
+        "Image": "sha256:42f1ec4a9b931594bdff1bbc9f8891ff9df4196127064fdef6e8dec27a445494",
+        "ResolvConfPath": "/var/lib/docker/containers/8fece13a39c69693cb05b3364f1c8f26d5fc70116a59a7de98239ad701dd75d6/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/8fece13a39c69693cb05b3364f1c8f26d5fc70116a59a7de98239ad701dd75d6/hostname",
+        "HostsPath": "/var/lib/docker/containers/8fece13a39c69693cb05b3364f1c8f26d5fc70116a59a7de98239ad701dd75d6/hosts",
+        "LogPath": "/var/lib/docker/containers/8fece13a39c69693cb05b3364f1c8f26d5fc70116a59a7de98239ad701dd75d6/8fece13a39c69693cb05b3364f1c8f26d5fc70116a59a7de98239ad701dd75d6-json.log",
+        "Name": "/pdns-server",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/docker/DNS/server:/etc/pdns/conf.d"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "prod-net",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "unless-stopped",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": [
+                "AUDIT_WRITE",
+                "CHOWN",
+                "DAC_OVERRIDE",
+                "FOWNER",
+                "FSETID",
+                "KILL",
+                "MKNOD",
+                "NET_BIND_SERVICE",
+                "NET_RAW",
+                "SETFCAP",
+                "SETGID",
+                "SETPCAP",
+                "SETUID",
+                "SYS_CHROOT"
+            ],
+            "CapDrop": [
+                "AUDIT_CONTROL",
+                "BLOCK_SUSPEND",
+                "DAC_READ_SEARCH",
+                "IPC_LOCK",
+                "IPC_OWNER",
+                "LEASE",
+                "LINUX_IMMUTABLE",
+                "MAC_ADMIN",
+                "MAC_OVERRIDE",
+                "NET_ADMIN",
+                "NET_BROADCAST",
+                "SYSLOG",
+                "SYS_ADMIN",
+                "SYS_BOOT",
+                "SYS_MODULE",
+                "SYS_NICE",
+                "SYS_PACCT",
+                "SYS_PTRACE",
+                "SYS_RAWIO",
+                "SYS_RESOURCE",
+                "SYS_TIME",
+                "SYS_TTY_CONFIG",
+                "WAKE_ALARM"
+            ],
+            "CgroupnsMode": "host",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/889d3910ec5a35d342a0e5f0331b5117bd8ba0cd841876b60a8d0298bead5e77-init/diff:/var/lib/docker/overlay2/3ef6a6b65af636cd12077b06fbac6085a53f08e477db2aa9ed2ff869b0163a3a/diff:/var/lib/docker/overlay2/030e6595437973af23b06513131a73cb3edfdeb1f25fb52c49d3ed54b12a68aa/diff:/var/lib/docker/overlay2/4320d791872d27b6a892fc9fc051839175d9b749258b24532aae702ac17ed32c/diff:/var/lib/docker/overlay2/a3c8891b7a118b261165601da427547226892162d90c7664647ad320b524a1d7/diff:/var/lib/docker/overlay2/07504744a6ffb81a2dae712610a5c71a371d6033c071ba26f838b87fbb86090d/diff",
+                "MergedDir": "/var/lib/docker/overlay2/889d3910ec5a35d342a0e5f0331b5117bd8ba0cd841876b60a8d0298bead5e77/merged",
+                "UpperDir": "/var/lib/docker/overlay2/889d3910ec5a35d342a0e5f0331b5117bd8ba0cd841876b60a8d0298bead5e77/diff",
+                "WorkDir": "/var/lib/docker/overlay2/889d3910ec5a35d342a0e5f0331b5117bd8ba0cd841876b60a8d0298bead5e77/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/docker/DNS/server",
+                "Destination": "/etc/pdns/conf.d",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "473fd54d71b5",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "53/tcp": {},
+                "53/udp": {},
+                "8081/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "MYSQL_USER=root",
+                "MYSQL_PASS=password",
+                "MYSQL_PORT=3306",
+                "MYSQL_HOST=pdns-mysql",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "POWERDNS_VERSION=4.3.1",
+                "MYSQL_DEFAULT_AUTOCONF=true",
+                "MYSQL_DEFAULT_HOST=mysql",
+                "MYSQL_DEFAULT_PORT=3306",
+                "MYSQL_DEFAULT_USER=root",
+                "MYSQL_DEFAULT_PASS=root",
+                "MYSQL_DEFAULT_DB=pdns"
+            ],
+            "Cmd": null,
+            "Image": "pdns-server:current",
+            "Volumes": {
+                "/etc/pdns/conf.d": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "66b9cd15e117b31fd7f72c13e165408362b36175f54c4ed36582f86d3c987513",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "53/tcp": null,
+                "53/udp": null,
+                "8081/tcp": null
+            },
+            "SandboxKey": "/var/run/docker/netns/66b9cd15e117",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "prod-net": {
+                    "IPAMConfig": {
+                        "IPv4Address": "172.19.0.10"
+                    },
+                    "Links": null,
+                    "Aliases": [
+                        "473fd54d71b5",
+                        "8fece13a39c6"
+                    ],
+                    "NetworkID": "2294be88710758535dc4bc6fb8e76d2f1f1aa039d82345e9bd34669545d78866",
+                    "EndpointID": "1c760ef8ab0a79fff26ef06570d01d265244a0a8deaf6e88d3100f28e150a17e",
+                    "Gateway": "172.19.0.1",
+                    "IPAddress": "172.19.0.10",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:13:00:0a",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+
+pdns-recursor
+[
+    {
+        "Id": "24dcb3ec3ed99f7cb8b8b142b98147d5a98f2967f69c308be839d57d23597e3b",
+        "Created": "2021-07-10T12:54:24.925576446Z",
+        "Path": "/app/entrypoint.sh",
+        "Args": [
+            "app:start"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 2467,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2022-06-18T13:57:29.664321945Z",
+            "FinishedAt": "2022-06-18T09:57:13.661212188-04:00"
+        },
+        "Image": "sha256:36967a7c53f9a53da968d6b79f062fa11bb557a7fdd23b85cf28606ae7733877",
+        "ResolvConfPath": "/var/lib/docker/containers/24dcb3ec3ed99f7cb8b8b142b98147d5a98f2967f69c308be839d57d23597e3b/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/24dcb3ec3ed99f7cb8b8b142b98147d5a98f2967f69c308be839d57d23597e3b/hostname",
+        "HostsPath": "/var/lib/docker/containers/24dcb3ec3ed99f7cb8b8b142b98147d5a98f2967f69c308be839d57d23597e3b/hosts",
+        "LogPath": "/var/lib/docker/containers/24dcb3ec3ed99f7cb8b8b142b98147d5a98f2967f69c308be839d57d23597e3b/24dcb3ec3ed99f7cb8b8b142b98147d5a98f2967f69c308be839d57d23597e3b-json.log",
+        "Name": "/pdns-recursor",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "prod-net",
+            "PortBindings": {
+                "53/udp": [
+                    {
+                        "HostIp": "192.168.7.10",
+                        "HostPort": "53"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "unless-stopped",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": [
+                "AUDIT_WRITE",
+                "CHOWN",
+                "DAC_OVERRIDE",
+                "FOWNER",
+                "FSETID",
+                "KILL",
+                "MKNOD",
+                "NET_BIND_SERVICE",
+                "NET_RAW",
+                "SETFCAP",
+                "SETGID",
+                "SETPCAP",
+                "SETUID",
+                "SYS_CHROOT"
+            ],
+            "CapDrop": [
+                "AUDIT_CONTROL",
+                "BLOCK_SUSPEND",
+                "DAC_READ_SEARCH",
+                "IPC_LOCK",
+                "IPC_OWNER",
+                "LEASE",
+                "LINUX_IMMUTABLE",
+                "MAC_ADMIN",
+                "MAC_OVERRIDE",
+                "NET_ADMIN",
+                "NET_BROADCAST",
+                "SYSLOG",
+                "SYS_ADMIN",
+                "SYS_BOOT",
+                "SYS_MODULE",
+                "SYS_NICE",
+                "SYS_PACCT",
+                "SYS_PTRACE",
+                "SYS_RAWIO",
+                "SYS_RESOURCE",
+                "SYS_TIME",
+                "SYS_TTY_CONFIG",
+                "WAKE_ALARM"
+            ],
+            "CgroupnsMode": "host",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/55306f1244ec0aacf424dd427c62734226bcd9a5c5853a284afbf0abf6bb8db9-init/diff:/var/lib/docker/overlay2/724a2cadab762da440a2dffbc80404ca16540d4c24efa4e96cb04886befc8185/diff:/var/lib/docker/overlay2/64e6b2a2c76a3f7ce67e9b3e2fd47ca57771e88a10b696aeb795d8da7a59b9ad/diff:/var/lib/docker/overlay2/624ff56413f680abfdd3f8e281a79c766aeffd9e4761093d58236d5b6b79f88c/diff:/var/lib/docker/overlay2/05bd8c1b7a56daaa98d1c3e282f97bc1d0e2caee92d150e15441477b30d5d529/diff:/var/lib/docker/overlay2/60780d38b9c6eb7d6165e31ff79a338aaa597853f26024373c5da995473ed620/diff:/var/lib/docker/overlay2/daeca5fb6112aa3044438e3706cd1b64b734f1d86ace0482edb6debfa20a72f4/diff:/var/lib/docker/overlay2/b7eb2b07b9be6019e438f42074029e63fa78146bde40be955ac9cfe1cd91dc15/diff:/var/lib/docker/overlay2/20156a9c13bf80fb1a46d3c7357da1a638420e5ef3fde0914a24456c2c51f1ea/diff:/var/lib/docker/overlay2/f6843a73503a872bbf7b7d800ac57775f59dbb6c96b3dca13388f0c04b5deb9f/diff",
+                "MergedDir": "/var/lib/docker/overlay2/55306f1244ec0aacf424dd427c62734226bcd9a5c5853a284afbf0abf6bb8db9/merged",
+                "UpperDir": "/var/lib/docker/overlay2/55306f1244ec0aacf424dd427c62734226bcd9a5c5853a284afbf0abf6bb8db9/diff",
+                "WorkDir": "/var/lib/docker/overlay2/55306f1244ec0aacf424dd427c62734226bcd9a5c5853a284afbf0abf6bb8db9/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "b21ccda17860",
+            "Domainname": "",
+            "User": "root",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "53/tcp": {},
+                "53/udp": {},
+                "8081/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PDNS_LOCAL_ADDRESS=0.0.0.0",
+                "PDNS_AUTOCONFIG=true",
+                "PDNS_ALLOW_FROM=192.168.7.0/24,192.168.37.0/24,192.168.57.0/24,192.168.17.0/24,172.16.7.0/24,172.16.37.0/24,172.16.17.0/24,10.0.7.0/24,172.19.0.0/24,172.17.0.0/24,172.18.0.0/24",
+                "PDNS_FORWARD_ZONES=kaubalegacy.com=172.19.0.10,*=1.1.1.1",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive"
+            ],
+            "Cmd": [
+                "app:start"
+            ],
+            "Image": "pdns-recursor:current",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/app/entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "last_changed": "2020-05-11",
+                "maintainer": "Ralf Geschke <ralf@kuerbis.org>"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "6f57837f9cc64ca91a38085adf1ee7f81e88097c3428d08e9a0524f6646a5a50",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "53/tcp": null,
+                "53/udp": [
+                    {
+                        "HostIp": "192.168.7.10",
+                        "HostPort": "53"
+                    }
+                ],
+                "8081/tcp": null
+            },
+            "SandboxKey": "/var/run/docker/netns/6f57837f9cc6",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "prod-net": {
+                    "IPAMConfig": {},
+                    "Links": null,
+                    "Aliases": [
+                        "b21ccda17860",
+                        "24dcb3ec3ed9"
+                    ],
+                    "NetworkID": "2294be88710758535dc4bc6fb8e76d2f1f1aa039d82345e9bd34669545d78866",
+                    "EndpointID": "c9b2d78dbdd0ebe93ec023b833c1ae7acee9e9f6e79372885d20761fda560333",
+                    "Gateway": "172.19.0.1",
+                    "IPAddress": "172.19.0.3",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:13:00:03",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+
+pdns-mysql
+[
+    {
+        "Id": "50c5ea260dd4dd2d716c74858a791d43b58183ac06cbf1e6e1bcedbb2d48dbfe",
+        "Created": "2021-07-02T15:20:16.176995141Z",
+        "Path": "docker-entrypoint.sh",
+        "Args": [
+            "mysqld"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 2455,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2022-06-18T13:57:30.381013306Z",
+            "FinishedAt": "2022-06-18T09:57:13.690150407-04:00"
+        },
+        "Image": "sha256:26c1e3bab641998ab0601ef8041b4c72ab7654c9ffcaf850092d913c2e9a3029",
+        "ResolvConfPath": "/var/lib/docker/containers/50c5ea260dd4dd2d716c74858a791d43b58183ac06cbf1e6e1bcedbb2d48dbfe/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/50c5ea260dd4dd2d716c74858a791d43b58183ac06cbf1e6e1bcedbb2d48dbfe/hostname",
+        "HostsPath": "/var/lib/docker/containers/50c5ea260dd4dd2d716c74858a791d43b58183ac06cbf1e6e1bcedbb2d48dbfe/hosts",
+        "LogPath": "/var/lib/docker/containers/50c5ea260dd4dd2d716c74858a791d43b58183ac06cbf1e6e1bcedbb2d48dbfe/50c5ea260dd4dd2d716c74858a791d43b58183ac06cbf1e6e1bcedbb2d48dbfe-json.log",
+        "Name": "/pdns-mysql",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/docker/DNS/mysql:/var/lib/mysql"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "prod-net",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "unless-stopped",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": [
+                "AUDIT_WRITE",
+                "CHOWN",
+                "DAC_OVERRIDE",
+                "FOWNER",
+                "FSETID",
+                "KILL",
+                "MKNOD",
+                "NET_BIND_SERVICE",
+                "NET_RAW",
+                "SETFCAP",
+                "SETGID",
+                "SETPCAP",
+                "SETUID",
+                "SYS_CHROOT"
+            ],
+            "CapDrop": [
+                "AUDIT_CONTROL",
+                "BLOCK_SUSPEND",
+                "DAC_READ_SEARCH",
+                "IPC_LOCK",
+                "IPC_OWNER",
+                "LEASE",
+                "LINUX_IMMUTABLE",
+                "MAC_ADMIN",
+                "MAC_OVERRIDE",
+                "NET_ADMIN",
+                "NET_BROADCAST",
+                "SYSLOG",
+                "SYS_ADMIN",
+                "SYS_BOOT",
+                "SYS_MODULE",
+                "SYS_NICE",
+                "SYS_PACCT",
+                "SYS_PTRACE",
+                "SYS_RAWIO",
+                "SYS_RESOURCE",
+                "SYS_TIME",
+                "SYS_TTY_CONFIG",
+                "WAKE_ALARM"
+            ],
+            "CgroupnsMode": "host",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/8c871a1e88ae7249692841f2a2d796e85f8cf75ea7613961ce275ed9b18f0cdb-init/diff:/var/lib/docker/overlay2/d8871a16fe4a9c4654de81b8be8008bb83e043495892f0ed50891c1633670dc5/diff:/var/lib/docker/overlay2/1d8c8eb706a17708ae89632b1dac67835907743fb1e168724b9c2a74d5b962b1/diff:/var/lib/docker/overlay2/36b5d5267519778cf794759de414b2b3a7f0f86be6d88fbf0f80fb20a1a8dc42/diff:/var/lib/docker/overlay2/d735c2d554d5470a70f1010135854b4decd370ae47f4fa6cd1148a5106b05cbf/diff:/var/lib/docker/overlay2/da8f211d5acfae1cc7d2c973dd7b9fb795dfbd587b37abf5eb1a688189028345/diff:/var/lib/docker/overlay2/a350c6b957df8c7d5b7366a341234cf5922f7c67b4124e63ff406718b89cb39b/diff:/var/lib/docker/overlay2/61b65630af125114a6acaa5cef0871a5175fc9ec8b80a18d711e8165c6bdfac3/diff:/var/lib/docker/overlay2/cc8c0ca7ea988a85884d2b1b44b201c871e6459b2fe42c6cfa725066832ecfb2/diff:/var/lib/docker/overlay2/cbeb8d446a1d6ca964bdd4a3fc1baa85b2c4ac6d608f303ff027644f59c6aec3/diff:/var/lib/docker/overlay2/e4044d04bfdd912292239fc76ce41c22b3380f18f65252e3fd825f2174412b36/diff:/var/lib/docker/overlay2/d32e668e35281f236881bdb68d8eff54e2896617ac84ca090ce623e940f036c0/diff:/var/lib/docker/overlay2/57331b26fa308e03424ec5ec4c3b895996b1eb9a87319d3691a4c2a786afca85/diff:/var/lib/docker/overlay2/2a13f1e789868f2005529bf9a7d96d055c4365b02e3165b51b673f08bce3f547/diff",
+                "MergedDir": "/var/lib/docker/overlay2/8c871a1e88ae7249692841f2a2d796e85f8cf75ea7613961ce275ed9b18f0cdb/merged",
+                "UpperDir": "/var/lib/docker/overlay2/8c871a1e88ae7249692841f2a2d796e85f8cf75ea7613961ce275ed9b18f0cdb/diff",
+                "WorkDir": "/var/lib/docker/overlay2/8c871a1e88ae7249692841f2a2d796e85f8cf75ea7613961ce275ed9b18f0cdb/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/docker/DNS/mysql",
+                "Destination": "/var/lib/mysql",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "fcb4c90b8e1c",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "3306/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "MYSQL_ROOT_PASSWORD=password",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "GOSU_VERSION=1.12",
+                "GPG_KEYS=177F4010FE56CA3336300305F1656F24C74CD1D8",
+                "MARIADB_MAJOR=10.5",
+                "MARIADB_VERSION=1:10.5.8+maria~focal"
+            ],
+            "Cmd": [
+                "mysqld"
+            ],
+            "Image": "pdns-mysql:current",
+            "Volumes": {
+                "/var/lib/mysql": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "507324faf5e8ea360f537aa89f0bd36d9e1e7a21b4c629d1c50059d56b2ef082",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "3306/tcp": null
+            },
+            "SandboxKey": "/var/run/docker/netns/507324faf5e8",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "prod-net": {
+                    "IPAMConfig": {},
+                    "Links": null,
+                    "Aliases": [
+                        "50c5ea260dd4",
+                        "fcb4c90b8e1c"
+                    ],
+                    "NetworkID": "2294be88710758535dc4bc6fb8e76d2f1f1aa039d82345e9bd34669545d78866",
+                    "EndpointID": "aca860433984443f97aab5d71f635be6b1540afe5c8c2d5b23eca7446ecce795",
+                    "Gateway": "172.19.0.1",
+                    "IPAddress": "172.19.0.5",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:13:00:05",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+
+pdns-pda
+[
+    {
+        "Id": "90060e8b417593cb86ee6c2e23004a7ac2fbe4e88c888c46904a09138c1d8824",
+        "Created": "2021-07-05T21:12:48.091846015Z",
+        "Path": "entrypoint.sh",
+        "Args": [
+            "gunicorn",
+            "powerdnsadmin:create_app()",
+            "--user",
+            "pda",
+            "--group",
+            "pda"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 2459,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2022-06-18T13:57:30.178435661Z",
+            "FinishedAt": "2022-06-18T09:57:13.690281222-04:00",
+            "Health": {
+                "Status": "healthy",
+                "FailingStreak": 0,
+                "Log": [
+                    {
+                        "Start": "2022-09-16T13:14:43.55477636-04:00",
+                        "End": "2022-09-16T13:14:43.637776173-04:00",
+                        "ExitCode": 0,
+                        "Output": "<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <title>Log In - PowerDNS-Admin</title>\n  <!-- Tell the browser to be responsive to screen width -->\n  <meta content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\" name=\"viewport\">\n  <link rel=\"stylesheet\" href=\"/static/generated/login.css\">\n\n  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->\n  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->\n  <!--[if lt IE 9]>\n  <script src=\"https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js\"></script>\n  <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\n  <![endif]-->\n</head>\n\n<body class=\"hold-transition login-page\">\n  <div class=\"login-box\">\n    <div class=\"login-logo\">\n      <a href=\"/\"><b>PowerDNS</b>-Admin</a>\n    </div>\n    <!-- /.login-logo -->\n    <div class=\"login-box-body\">\n      \n      <form action=\"\" method=\"post\" data-toggle=\"validator\">\n        <input type=\"hidden\" name=\"_csrf_token\" value=\"41e4b7f5e0fe39eb87887aed7a7902daee7b86b2\">\n        <div class=\"form-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Username\" name=\"username\"\n            data-error=\"Please input your username\" required >\n          <span class=\"help-block with-errors\"></span>\n        </div>\n        <div class=\"form-group\">\n          <input type=\"password\" class=\"form-control\" placeholder=\"Password\" name=\"password\"\n            data-error=\"Please input your password\" required >\n          <span class=\"help-block with-errors\"></span>\n        </div>\n        <div class=\"form-group\">\n          <input type=\"otptoken\" class=\"form-control\" placeholder=\"OTP Token\" name=\"otptoken\">\n        </div>\n        \n        <div class=\"form-group\">\n          <input type=\"hidden\" name=\"auth_method\" value=\"LOCAL\">\n        </div>\n        \n\n        <div class=\"row\">\n          <div class=\"col-xs-8\">\n            <div class=\"checkbox icheck\">\n              <label>\n                <input type=\"checkbox\" name=\"remember\"> Remember Me\n              </label>\n            </div>\n          </div>\n          <!-- /.col -->\n          <div class=\"col-xs-4\">\n            <button type=\"submit\" class=\"btn btn-flat btn-primary btn-block\">Sign In</button>\n          </div>\n          <!-- /.col -->\n        </div>\n      </form>\n      \n\n      \n\n      \n    </div>\n    <!-- /.login-box-body -->\n    <div class=\"login-box-footer\">\n      <center>\n        <p>Powered by <a href=\"https://github.com/ngoduykhanh/PowerDNS-Admin\">PowerDNS-Admin</a></p>\n      </center>\n    </div>\n  </div>\n  <!-- /.login-box -->\n\n  <script type=\"text/javascript\" src=\"/static/generated/login.js\"></script>\n  <script type=\"text/javascript\" src=\"/static/generated/validation.js\"></script>\n\n  <script>\n    $(function () {\n      $('input').iCheck({\n        checkboxClass: 'icheckbox_square-blue',\n        radioClass: 'iradio_square-blue',\n        increaseArea: '20%' // optional\n      });\n    });\n  </script>\n</body>\n\n</html>"
+                    },
+                    {
+                        "Start": "2022-09-16T13:15:13.749666973-04:00",
+                        "End": "2022-09-16T13:15:13.832645659-04:00",
+                        "ExitCode": 0,
+                        "Output": "<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <title>Log In - PowerDNS-Admin</title>\n  <!-- Tell the browser to be responsive to screen width -->\n  <meta content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\" name=\"viewport\">\n  <link rel=\"stylesheet\" href=\"/static/generated/login.css\">\n\n  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->\n  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->\n  <!--[if lt IE 9]>\n  <script src=\"https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js\"></script>\n  <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\n  <![endif]-->\n</head>\n\n<body class=\"hold-transition login-page\">\n  <div class=\"login-box\">\n    <div class=\"login-logo\">\n      <a href=\"/\"><b>PowerDNS</b>-Admin</a>\n    </div>\n    <!-- /.login-logo -->\n    <div class=\"login-box-body\">\n      \n      <form action=\"\" method=\"post\" data-toggle=\"validator\">\n        <input type=\"hidden\" name=\"_csrf_token\" value=\"1ecfa2ce54eed61da494cf401f396433390beadc\">\n        <div class=\"form-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Username\" name=\"username\"\n            data-error=\"Please input your username\" required >\n          <span class=\"help-block with-errors\"></span>\n        </div>\n        <div class=\"form-group\">\n          <input type=\"password\" class=\"form-control\" placeholder=\"Password\" name=\"password\"\n            data-error=\"Please input your password\" required >\n          <span class=\"help-block with-errors\"></span>\n        </div>\n        <div class=\"form-group\">\n          <input type=\"otptoken\" class=\"form-control\" placeholder=\"OTP Token\" name=\"otptoken\">\n        </div>\n        \n        <div class=\"form-group\">\n          <input type=\"hidden\" name=\"auth_method\" value=\"LOCAL\">\n        </div>\n        \n\n        <div class=\"row\">\n          <div class=\"col-xs-8\">\n            <div class=\"checkbox icheck\">\n              <label>\n                <input type=\"checkbox\" name=\"remember\"> Remember Me\n              </label>\n            </div>\n          </div>\n          <!-- /.col -->\n          <div class=\"col-xs-4\">\n            <button type=\"submit\" class=\"btn btn-flat btn-primary btn-block\">Sign In</button>\n          </div>\n          <!-- /.col -->\n        </div>\n      </form>\n      \n\n      \n\n      \n    </div>\n    <!-- /.login-box-body -->\n    <div class=\"login-box-footer\">\n      <center>\n        <p>Powered by <a href=\"https://github.com/ngoduykhanh/PowerDNS-Admin\">PowerDNS-Admin</a></p>\n      </center>\n    </div>\n  </div>\n  <!-- /.login-box -->\n\n  <script type=\"text/javascript\" src=\"/static/generated/login.js\"></script>\n  <script type=\"text/javascript\" src=\"/static/generated/validation.js\"></script>\n\n  <script>\n    $(function () {\n      $('input').iCheck({\n        checkboxClass: 'icheckbox_square-blue',\n        radioClass: 'iradio_square-blue',\n        increaseArea: '20%' // optional\n      });\n    });\n  </script>\n</body>\n\n</html>"
+                    },
+                    {
+                        "Start": "2022-09-16T13:15:44.017126441-04:00",
+                        "End": "2022-09-16T13:15:44.131226218-04:00",
+                        "ExitCode": 0,
+                        "Output": "<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <title>Log In - PowerDNS-Admin</title>\n  <!-- Tell the browser to be responsive to screen width -->\n  <meta content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\" name=\"viewport\">\n  <link rel=\"stylesheet\" href=\"/static/generated/login.css\">\n\n  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->\n  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->\n  <!--[if lt IE 9]>\n  <script src=\"https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js\"></script>\n  <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\n  <![endif]-->\n</head>\n\n<body class=\"hold-transition login-page\">\n  <div class=\"login-box\">\n    <div class=\"login-logo\">\n      <a href=\"/\"><b>PowerDNS</b>-Admin</a>\n    </div>\n    <!-- /.login-logo -->\n    <div class=\"login-box-body\">\n      \n      <form action=\"\" method=\"post\" data-toggle=\"validator\">\n        <input type=\"hidden\" name=\"_csrf_token\" value=\"9c8ad29570adaa68e21aeef1a539f839237dcaaa\">\n        <div class=\"form-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Username\" name=\"username\"\n            data-error=\"Please input your username\" required >\n          <span class=\"help-block with-errors\"></span>\n        </div>\n        <div class=\"form-group\">\n          <input type=\"password\" class=\"form-control\" placeholder=\"Password\" name=\"password\"\n            data-error=\"Please input your password\" required >\n          <span class=\"help-block with-errors\"></span>\n        </div>\n        <div class=\"form-group\">\n          <input type=\"otptoken\" class=\"form-control\" placeholder=\"OTP Token\" name=\"otptoken\">\n        </div>\n        \n        <div class=\"form-group\">\n          <input type=\"hidden\" name=\"auth_method\" value=\"LOCAL\">\n        </div>\n        \n\n        <div class=\"row\">\n          <div class=\"col-xs-8\">\n            <div class=\"checkbox icheck\">\n              <label>\n                <input type=\"checkbox\" name=\"remember\"> Remember Me\n              </label>\n            </div>\n          </div>\n          <!-- /.col -->\n          <div class=\"col-xs-4\">\n            <button type=\"submit\" class=\"btn btn-flat btn-primary btn-block\">Sign In</button>\n          </div>\n          <!-- /.col -->\n        </div>\n      </form>\n      \n\n      \n\n      \n    </div>\n    <!-- /.login-box-body -->\n    <div class=\"login-box-footer\">\n      <center>\n        <p>Powered by <a href=\"https://github.com/ngoduykhanh/PowerDNS-Admin\">PowerDNS-Admin</a></p>\n      </center>\n    </div>\n  </div>\n  <!-- /.login-box -->\n\n  <script type=\"text/javascript\" src=\"/static/generated/login.js\"></script>\n  <script type=\"text/javascript\" src=\"/static/generated/validation.js\"></script>\n\n  <script>\n    $(function () {\n      $('input').iCheck({\n        checkboxClass: 'icheckbox_square-blue',\n        radioClass: 'iradio_square-blue',\n        increaseArea: '20%' // optional\n      });\n    });\n  </script>\n</body>\n\n</html>"
+                    },
+                    {
+                        "Start": "2022-09-16T13:16:14.252428131-04:00",
+                        "End": "2022-09-16T13:16:14.346448047-04:00",
+                        "ExitCode": 0,
+                        "Output": "<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <title>Log In - PowerDNS-Admin</title>\n  <!-- Tell the browser to be responsive to screen width -->\n  <meta content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\" name=\"viewport\">\n  <link rel=\"stylesheet\" href=\"/static/generated/login.css\">\n\n  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->\n  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->\n  <!--[if lt IE 9]>\n  <script src=\"https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js\"></script>\n  <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\n  <![endif]-->\n</head>\n\n<body class=\"hold-transition login-page\">\n  <div class=\"login-box\">\n    <div class=\"login-logo\">\n      <a href=\"/\"><b>PowerDNS</b>-Admin</a>\n    </div>\n    <!-- /.login-logo -->\n    <div class=\"login-box-body\">\n      \n      <form action=\"\" method=\"post\" data-toggle=\"validator\">\n        <input type=\"hidden\" name=\"_csrf_token\" value=\"b34c394c47d18d28bda7192b8aa3742ea51836cb\">\n        <div class=\"form-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Username\" name=\"username\"\n            data-error=\"Please input your username\" required >\n          <span class=\"help-block with-errors\"></span>\n        </div>\n        <div class=\"form-group\">\n          <input type=\"password\" class=\"form-control\" placeholder=\"Password\" name=\"password\"\n            data-error=\"Please input your password\" required >\n          <span class=\"help-block with-errors\"></span>\n        </div>\n        <div class=\"form-group\">\n          <input type=\"otptoken\" class=\"form-control\" placeholder=\"OTP Token\" name=\"otptoken\">\n        </div>\n        \n        <div class=\"form-group\">\n          <input type=\"hidden\" name=\"auth_method\" value=\"LOCAL\">\n        </div>\n        \n\n        <div class=\"row\">\n          <div class=\"col-xs-8\">\n            <div class=\"checkbox icheck\">\n              <label>\n                <input type=\"checkbox\" name=\"remember\"> Remember Me\n              </label>\n            </div>\n          </div>\n          <!-- /.col -->\n          <div class=\"col-xs-4\">\n            <button type=\"submit\" class=\"btn btn-flat btn-primary btn-block\">Sign In</button>\n          </div>\n          <!-- /.col -->\n        </div>\n      </form>\n      \n\n      \n\n      \n    </div>\n    <!-- /.login-box-body -->\n    <div class=\"login-box-footer\">\n      <center>\n        <p>Powered by <a href=\"https://github.com/ngoduykhanh/PowerDNS-Admin\">PowerDNS-Admin</a></p>\n      </center>\n    </div>\n  </div>\n  <!-- /.login-box -->\n\n  <script type=\"text/javascript\" src=\"/static/generated/login.js\"></script>\n  <script type=\"text/javascript\" src=\"/static/generated/validation.js\"></script>\n\n  <script>\n    $(function () {\n      $('input').iCheck({\n        checkboxClass: 'icheckbox_square-blue',\n        radioClass: 'iradio_square-blue',\n        increaseArea: '20%' // optional\n      });\n    });\n  </script>\n</body>\n\n</html>"
+                    },
+                    {
+                        "Start": "2022-09-16T13:16:44.503598968-04:00",
+                        "End": "2022-09-16T13:16:44.583672659-04:00",
+                        "ExitCode": 0,
+                        "Output": "<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <title>Log In - PowerDNS-Admin</title>\n  <!-- Tell the browser to be responsive to screen width -->\n  <meta content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\" name=\"viewport\">\n  <link rel=\"stylesheet\" href=\"/static/generated/login.css\">\n\n  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->\n  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->\n  <!--[if lt IE 9]>\n  <script src=\"https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js\"></script>\n  <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\n  <![endif]-->\n</head>\n\n<body class=\"hold-transition login-page\">\n  <div class=\"login-box\">\n    <div class=\"login-logo\">\n      <a href=\"/\"><b>PowerDNS</b>-Admin</a>\n    </div>\n    <!-- /.login-logo -->\n    <div class=\"login-box-body\">\n      \n      <form action=\"\" method=\"post\" data-toggle=\"validator\">\n        <input type=\"hidden\" name=\"_csrf_token\" value=\"ebffc58cdc6733438411487bf9b9fb2f0b99a78f\">\n        <div class=\"form-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Username\" name=\"username\"\n            data-error=\"Please input your username\" required >\n          <span class=\"help-block with-errors\"></span>\n        </div>\n        <div class=\"form-group\">\n          <input type=\"password\" class=\"form-control\" placeholder=\"Password\" name=\"password\"\n            data-error=\"Please input your password\" required >\n          <span class=\"help-block with-errors\"></span>\n        </div>\n        <div class=\"form-group\">\n          <input type=\"otptoken\" class=\"form-control\" placeholder=\"OTP Token\" name=\"otptoken\">\n        </div>\n        \n        <div class=\"form-group\">\n          <input type=\"hidden\" name=\"auth_method\" value=\"LOCAL\">\n        </div>\n        \n\n        <div class=\"row\">\n          <div class=\"col-xs-8\">\n            <div class=\"checkbox icheck\">\n              <label>\n                <input type=\"checkbox\" name=\"remember\"> Remember Me\n              </label>\n            </div>\n          </div>\n          <!-- /.col -->\n          <div class=\"col-xs-4\">\n            <button type=\"submit\" class=\"btn btn-flat btn-primary btn-block\">Sign In</button>\n          </div>\n          <!-- /.col -->\n        </div>\n      </form>\n      \n\n      \n\n      \n    </div>\n    <!-- /.login-box-body -->\n    <div class=\"login-box-footer\">\n      <center>\n        <p>Powered by <a href=\"https://github.com/ngoduykhanh/PowerDNS-Admin\">PowerDNS-Admin</a></p>\n      </center>\n    </div>\n  </div>\n  <!-- /.login-box -->\n\n  <script type=\"text/javascript\" src=\"/static/generated/login.js\"></script>\n  <script type=\"text/javascript\" src=\"/static/generated/validation.js\"></script>\n\n  <script>\n    $(function () {\n      $('input').iCheck({\n        checkboxClass: 'icheckbox_square-blue',\n        radioClass: 'iradio_square-blue',\n        increaseArea: '20%' // optional\n      });\n    });\n  </script>\n</body>\n\n</html>"
+                    }
+                ]
+            }
+        },
+        "Image": "sha256:aa8301a3645eebbdc799ad22d947bd7b948e43ccf6df96984e44e88281f4da8a",
+        "ResolvConfPath": "/var/lib/docker/containers/90060e8b417593cb86ee6c2e23004a7ac2fbe4e88c888c46904a09138c1d8824/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/90060e8b417593cb86ee6c2e23004a7ac2fbe4e88c888c46904a09138c1d8824/hostname",
+        "HostsPath": "/var/lib/docker/containers/90060e8b417593cb86ee6c2e23004a7ac2fbe4e88c888c46904a09138c1d8824/hosts",
+        "LogPath": "/var/lib/docker/containers/90060e8b417593cb86ee6c2e23004a7ac2fbe4e88c888c46904a09138c1d8824/90060e8b417593cb86ee6c2e23004a7ac2fbe4e88c888c46904a09138c1d8824-json.log",
+        "Name": "/pdns-pda",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "prod-net",
+            "PortBindings": {
+                "80/tcp": [
+                    {
+                        "HostIp": "192.168.7.10",
+                        "HostPort": "80"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "unless-stopped",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": [
+                "AUDIT_WRITE",
+                "CHOWN",
+                "DAC_OVERRIDE",
+                "FOWNER",
+                "FSETID",
+                "KILL",
+                "MKNOD",
+                "NET_BIND_SERVICE",
+                "NET_RAW",
+                "SETFCAP",
+                "SETGID",
+                "SETPCAP",
+                "SETUID",
+                "SYS_CHROOT"
+            ],
+            "CapDrop": [
+                "AUDIT_CONTROL",
+                "BLOCK_SUSPEND",
+                "DAC_READ_SEARCH",
+                "IPC_LOCK",
+                "IPC_OWNER",
+                "LEASE",
+                "LINUX_IMMUTABLE",
+                "MAC_ADMIN",
+                "MAC_OVERRIDE",
+                "NET_ADMIN",
+                "NET_BROADCAST",
+                "SYSLOG",
+                "SYS_ADMIN",
+                "SYS_BOOT",
+                "SYS_MODULE",
+                "SYS_NICE",
+                "SYS_PACCT",
+                "SYS_PTRACE",
+                "SYS_RAWIO",
+                "SYS_RESOURCE",
+                "SYS_TIME",
+                "SYS_TTY_CONFIG",
+                "WAKE_ALARM"
+            ],
+            "CgroupnsMode": "host",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ],
+            "Init": false
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/06ffafb89fdfa5570c5d1cd505f1dc4e2787e7b79ef03a6048b1b54643889902-init/diff:/var/lib/docker/overlay2/16c70af47fecfe1ddddc1c89f534fc45c00146076bbad2d2df4a2cc0f2c023fa/diff:/var/lib/docker/overlay2/7568824e9848f2b03a816182897310e92ecb598922a3d1db5d7d085aaf1fef91/diff:/var/lib/docker/overlay2/23d90977eb55a30c6ef997fbe2213f89b38ab03aacd0a5322866ea0c0b14098a/diff:/var/lib/docker/overlay2/c6e37c659151bbee138418d24f27abf8aa4491607dccc941cfdf2c1f555b5334/diff:/var/lib/docker/overlay2/90564f671fd6bc7738a13c015415b27243720991e6b9d9c0cf2e47bed7931b04/diff:/var/lib/docker/overlay2/5c2c002e16b4e60d426e24dab9720b403809221164c6b34560754eb753c5992a/diff:/var/lib/docker/overlay2/35a293054461ef08327b215a395dda4c52d5a3fddeca81654604836c165148ec/diff",
+                "MergedDir": "/var/lib/docker/overlay2/06ffafb89fdfa5570c5d1cd505f1dc4e2787e7b79ef03a6048b1b54643889902/merged",
+                "UpperDir": "/var/lib/docker/overlay2/06ffafb89fdfa5570c5d1cd505f1dc4e2787e7b79ef03a6048b1b54643889902/diff",
+                "WorkDir": "/var/lib/docker/overlay2/06ffafb89fdfa5570c5d1cd505f1dc4e2787e7b79ef03a6048b1b54643889902/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "081ee9f6bd39",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "SQLALCHEMY_DATABASE_URI=mysql://root:password@pdns-mysql:3306/pda",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "FLASK_APP=/app/powerdnsadmin/__init__.py"
+            ],
+            "Cmd": [
+                "gunicorn",
+                "powerdnsadmin:create_app()",
+                "--user",
+                "pda",
+                "--group",
+                "pda"
+            ],
+            "Healthcheck": {
+                "Test": [
+                    "CMD",
+                    "wget",
+                    "--output-document=-",
+                    "--quiet",
+                    "--tries=1",
+                    "http://127.0.0.1/"
+                ]
+            },
+            "Image": "pdns-pda:current",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": [
+                "entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "3c3b8a6dde88c625dc4557271e94f0e50482435443a88a7bc57dc04d19be90ea",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "80/tcp": [
+                    {
+                        "HostIp": "192.168.7.10",
+                        "HostPort": "80"
+                    }
+                ]
+            },
+            "SandboxKey": "/var/run/docker/netns/3c3b8a6dde88",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "prod-net": {
+                    "IPAMConfig": {},
+                    "Links": null,
+                    "Aliases": [
+                        "90060e8b4175",
+                        "081ee9f6bd39"
+                    ],
+                    "NetworkID": "2294be88710758535dc4bc6fb8e76d2f1f1aa039d82345e9bd34669545d78866",
+                    "EndpointID": "91b5d2b7e7c83e027dc339f53d816afe234c2aadb72824ecf331838dc392c7fb",
+                    "Gateway": "172.19.0.1",
+                    "IPAddress": "172.19.0.4",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:13:00:04",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]

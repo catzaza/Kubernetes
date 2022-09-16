@@ -1,0 +1,71 @@
+# Authoritative Server
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: powerdns
+  namespace: dns-test
+spec:
+  selector:
+    matchLabels:
+      app: powerdns
+  template:
+    metadata:
+      labels:
+        app: powerdns
+    spec:
+      containers:
+      - name: pdns-server
+        image:  pdns-server:current
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - name: auth-dns
+          containerPort: 53
+          protocol: udp
+        - name: recurs-dns
+          containerPort: 53
+          protocol: udp
+        - name: api
+          containerPort: 8081
+          protocol: tcp
+        env:
+        - name: MYSQL_USER
+          value: root
+        - name: MYSQL_PASS
+          value: password
+        - name: MYSQL_PORT
+          value: 3306
+        - name: MYSQL_HOST
+          value: pdns-mysql
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pdns-server-dns
+  namespace: dns-test
+spec:
+  selector:
+    app: powerdns
+  ports:
+  - port: 53
+    targetPort: 53
+    protocol: UDP
+    name: dns-udp
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pdns-server-api
+  namespace: dns-test
+spec:
+  selector:
+    app: powerdns
+  ports:
+  - port: 8081
+    targetPort: 8081
+    protocol: TCP
+    name: pdns-api
+
+
