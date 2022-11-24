@@ -6,20 +6,21 @@
 
 
 
-sudo kubeadm init --pod-network-cidr=191.168.0.0/16 --control-plane-endpoint=k8s.kaubalegacy.com --upload-certs
+sudo kubeadm init --pod-network-cidr=10.57.0.0/16 --control-plane-endpoint=k8s.kaubalegacy.com --upload-certs
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 control-plane
-kubeadm join k8s.kaubalegacy.com:6443 --token bji96z.1ysneivh1183ahxt \
---discovery-token-ca-cert-hash sha256:9bc1fe9de85d122ed77e709a3dd26c5dc61329d948d6cc8c42f59ddf32f99f38 \
---control-plane --certificate-key 460436eeeb92282062751aa399fb332583468df85654bc5ed9e9cb543b116cee
+sudo kubeadm join k8s.kaubalegacy.com:6443 --token nm9mkb.z0ntvax22wczz3qs \
+--discovery-token-ca-cert-hash sha256:f888dda5124da815958b2eff89c83f4003a8d49d2c28a6c19922ecd869e709e4 \
+--control-plane --certificate-key 858b92c1cc89cfa845cfa6c11e73ffe7999d6c8cd0239295fd93298c9d06f2b0
 	
 worker node
-kubeadm join k8s.kaubalegacy.com:6443 --token bji96z.1ysneivh1183ahxt \
---discovery-token-ca-cert-hash sha256:9bc1fe9de85d122ed77e709a3dd26c5dc61329d948d6cc8c42f59ddf32f99f38
+sudo kubeadm join k8s.kaubalegacy.com:6443 --token nm9mkb.z0ntvax22wczz3qs \
+--discovery-token-ca-cert-hash sha256:f888dda5124da815958b2eff89c83f4003a8d49d2c28a6c19922ecd869e709e4
 	
 	
+
 
