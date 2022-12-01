@@ -1,0 +1,91 @@
+# extended LDIF
+#
+# LDAPv3
+# base <dc=kaubalegacy,dc=com> with scope subtree
+# filter: (objectclass=*)
+# requesting: ALL
+#
+
+# Admins, kaubalegacy.com
+dn: ou=Admins,dc=kaubalegacy,dc=com
+ou: Admins
+objectClass: organizationalUnit
+objectClass: top
+
+# Users, kaubalegacy.com
+dn: ou=Users,dc=kaubalegacy,dc=com
+ou: Users
+objectClass: organizationalUnit
+objectClass: top
+
+# Users, Users, kaubalegacy.com
+dn: cn=Users,ou=Users,dc=kaubalegacy,dc=com
+cn: Users
+gidNumber: 500
+objectClass: posixGroup
+objectClass: top
+
+# ekauba, Users, Users, kaubalegacy.com
+dn: cn=ekauba,cn=Users,ou=Users,dc=kaubalegacy,dc=com
+givenName: Elijah
+sn: Kauba
+uid: ekauba
+uidNumber: 1000
+gidNumber: 500
+homeDirectory: /home/users/ekauba
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+cn: ekauba
+userPassword:: e01ENX0rWE44MlVYUE00MjMwREQwUTRzaHZnPT0=
+
+# Administrators, Admins, kaubalegacy.com
+dn: cn=Administrators,ou=Admins,dc=kaubalegacy,dc=com
+cn: Administrators
+objectClass: groupOfNames
+objectClass: top
+member: cn=ahermosillo,cn=Users,ou=Users,dc=kaubalegacy,dc=com
+member: cn=mpanton,cn=Users,ou=Users,dc=kaubalegacy,dc=com
+member: cn=ekauba,cn=Users,ou=Users,dc=kaubalegacy,dc=com
+
+# mpanton, Users, Users, kaubalegacy.com
+dn: cn=mpanton,cn=Users,ou=Users,dc=kaubalegacy,dc=com
+givenName: Matt
+sn: Panton
+cn: mpanton
+uid: mpanton
+userPassword:: e01ENX1FenhaWXJ3em1qbGM2cGoya2EvdzlRPT0=
+uidNumber: 1001
+gidNumber: 500
+homeDirectory: /home/users/mpanton
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+
+# ahermosillo, Users, Users, kaubalegacy.com
+dn: cn=ahermosillo,cn=Users,ou=Users,dc=kaubalegacy,dc=com
+givenName: Adrian
+sn: Hermosillo
+cn: ahermosillo
+uid: ahermosillo
+userPassword:: e01ENX13VGZIakg3WS93ays2SGNBU2JWWEVnPT0=
+uidNumber: 1002
+gidNumber: 500
+homeDirectory: /home/users/ahermosillo
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+
+# Security, Admins, kaubalegacy.com
+dn: cn=Security,ou=Admins,dc=kaubalegacy,dc=com
+cn: Security
+objectClass: groupOfNames
+objectClass: top
+member: cn=ekauba,cn=Users,ou=Users,dc=kaubalegacy,dc=com
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 11
+# numEntries: 10

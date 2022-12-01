@@ -13,7 +13,7 @@ deployment:
   # Can be either Deployment or DaemonSet
   kind: Deployment
   # Number of pods of the deployment (only applies when kind == Deployment)
-  replicas: 1
+  replicas: 3
   # Additional deployment annotations (e.g. for jaeger-operator sidecar injection)
   annotations: {}
   # Additional deployment labels (e.g. for filtering deployment by custom labels)
@@ -207,10 +207,10 @@ globalArguments:
 # All available options available on https://docs.traefik.io/reference/static-configuration/cli/
 ## Use curly braces to pass values: `helm install --set="additionalArguments={--providers.kubernetesingress.ingressclass=traefik-internal,--log.level=DEBUG}"`
 additionalArguments: 
-  - --certificatesresolvers.letsencrypt.acme.tlschallenge=true
-  - --certificatesresolvers.letsencrypt.acme.email=ekauba@kaubalegacy.com
-  - --certificatesresolvers.letsencrypt.acme.storage=/data/acme.json
-  - --certificatesresolvers.letsencrypt.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory
+#  - --certificatesresolvers.letsencrypt.acme.tlschallenge=true
+#  - --certificatesresolvers.letsencrypt.acme.email=ekauba@kaubalegacy.com
+#  - --certificatesresolvers.letsencrypt.acme.storage=/data/acme.json
+#  - --certificatesresolvers.letsencrypt.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory
 #  - "--providers.kubernetesingress.ingressclass=traefik-internal"
 #  - "--log.level=DEBUG"
 
