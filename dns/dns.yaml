@@ -2,16 +2,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: powerdns
-  namespace: dns-test
+  name: powerdns-server
+  namespace: dns-dev
 spec:
   selector:
     matchLabels:
-      app: powerdns
+      app: powerdns-server
   template:
     metadata:
       labels:
-        app: powerdns
+        app: powerdns-server
     spec:
       containers:
       - name: pdns-server
@@ -22,12 +22,14 @@ spec:
             cpu: "500m"
         ports:
         - name: auth-dns
-          containerPort: 53
+          containerPort: 9053
           protocol: UDP
         - name: api
           containerPort: 8081
           protocol: TCP
         env:
+        - name: local-port
+          value: '9053'
         - name: MYSQL_USER
           value: root
         - name: MYSQL_PASS
@@ -36,6 +38,23 @@ spec:
           value: '3306'
         - name: MYSQL_HOST
           value: pdns-mysql
+---
+# Recursive Server
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: powerdns-recursor
+  namespace: dns-dev
+spec:
+  selector:
+    matchLabels:
+      app: powerdns-recursor
+  template:
+    metadata:
+      labels:
+        app: powerdns-recursor
+    spec:
+      containers:
       - name: pdns-recursor
         image: powerdns/pdns-recursor-47:latest
         resources:
@@ -44,11 +63,28 @@ spec:
             cpu: "500m"
         ports:
         - name: recursor-dns
-          containerPort: 53
+          containerPort: 9053
           protocol: UDP
         env:
-        - name: blah
-          value: '1234'
+        - name: local-port
+          value: '9053'
+---
+# Authoritative Server Database
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: powerdns-mysql
+  namespace: dns-dev
+spec:
+  selector:
+    matchLabels:
+      app: powerdns-mysql
+  template:
+    metadata:
+      labels:
+        app: powerdns-mysql
+    spec:
+      containers:
       - name: pdns-mysql
         image: mariadb:latest
         resources:
@@ -66,6 +102,23 @@ spec:
           value: password
         - name: MARIADB_ROOT_PASSWORD
           value: password
+---
+# Powerdns-admin Portal
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: powerdns-admin
+  namespace: dns-dev
+spec:
+  selector:
+    matchLabels:
+      app: powerdns-admin
+  template:
+    metadata:
+      labels:
+        app: powerdns-admin
+    spec:
+      containers:
       - name: pdns-admin
         image: ngoduykhanh/powerdns-admin:latest
         resources:
@@ -81,14 +134,14 @@ apiVersion: v1
 kind: Service
 metadata:
   name: pdns-server-dns
-  namespace: dns-test
+  namespace: dns-dev
 spec:
   selector:
-    app: powerdns
+    app: powerdns-server
   type: ClusterIP
   ports:
   - port: 53
-    targetPort: 53
+    targetPort: 9053
     protocol: UDP
     name: dns-udp
 ---
@@ -96,15 +149,43 @@ apiVersion: v1
 kind: Service
 metadata:
   name: pdns-server-api
-  namespace: dns-test
+  namespace: dns-dev
 spec:
   selector:
-    app: powerdns
+    app: powerdns-server
   type: LoadBalancer
   ports:
   - port: 8081
     targetPort: 8081
     protocol: TCP
     name: pdns-api
-
-
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pdns-recursor-dns
+  namespace: dns-dev
+spec:
+  selector:
+    app: powerdns-recursor
+  type: LoadBalancer
+  ports:
+  - port: 53
+    targetPort: 9053
+    protocol: UDP
+    name: recursor-dns-udp
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pdns-admin-portal
+  namespace: dns-dev
+spec:
+  selector:
+    app: powerdns-admin
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: pdns-admin-portal-80

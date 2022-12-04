@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ template "powerdns-k8s-chart.name" . }}-dns
+  blah: {{ .Chart.Name }}
+spec:
+  selector:
+    matchLabels:
+      app: powerdns-server
+  replicas: {{ .Values.auth.numberOfAuthServerReplicas }}
+  template:
+    metadata:
+      labels:
+        app: powerdns-server
+    spec:
+      containers:
+      - name: pdns-server
+        image:  powerdns/pdns-auth-master:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - name: auth-dns
+          containerPort: 9053
+          protocol: UDP
+        - name: api
+          containerPort: 8081
+          protocol: TCP
+        env:
+        - name: local-port
+          value: '9053'
+        - name: MYSQL_USER
+          value: root
+        - name: MYSQL_PASS
+          value: password
+        - name: MYSQL_PORT
+          value: '3306'
+        - name: MYSQL_HOST
+          value: pdns-mysql
