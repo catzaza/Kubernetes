@@ -23,11 +23,6 @@ spec:
         - name: recursor-dns
           containerPort: 9053
           protocol: UDP
-<<<<<<< HEAD
-        {{ $list := list .Values.recursor.args }}
-        args: {{- range $list }}
-=======
         {{- range $arg := .Values.recursor.args }}
         args: {{ $arg | quote}}
         {{- end }}
->>>>>>> c873058b98aeca0f257091eae6b357457ef63341
