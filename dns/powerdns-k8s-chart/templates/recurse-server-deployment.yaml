@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: powerdns-recursor
+  namespace: dns-dev
+spec:
+  selector:
+    matchLabels:
+      app: powerdns-recursor
+  template:
+    metadata:
+      labels:
+        app: powerdns-recursor
+    spec:
+      containers:
+      - name: pdns-recursor
+        image: powerdns/pdns-recursor-master:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - name: recursor-dns
+          containerPort: 9053
+          protocol: UDP
+        {{ $list := list .Values.recursor.args }}
+        args: {{- range $list }}
