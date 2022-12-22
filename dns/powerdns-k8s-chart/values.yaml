@@ -3,5 +3,5 @@ auth:
   numberOfAuthServerReplicas: 1
 recursor:
   args:
-    - "--forward-zones=kaubalegacy=127.0.0.1, *=1.1.1.1"
+    - "--forward-zones=kaubalegacy=127.0.0.1,*=1.1.1.1"
     - "--local-port=9053"
