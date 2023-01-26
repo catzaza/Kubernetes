@@ -1,0 +1,36 @@
+{{- if .Values.mysql.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: powerdns-mysql
+  namespace: dns-dev
+spec:
+  selector:
+    matchLabels:
+      app: powerdns-mysql
+  template:
+    metadata:
+      labels:
+        app: powerdns-mysql
+    spec:
+      containers:
+      - name: pdns-mysql
+        image: mariadb/server:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - name: mysql-port
+          containerPort: 3306
+          protocol: TCP
+        env:
+        - name: MARIADB_USER
+          value: root
+        - name: MARIADB_PASS
+          value: password
+        - name: MARIADB_ROOT_PASSWORD
+          value: password
+        - name: MARIADB_DATABASE
+          value: powerdns
+{{- end}}

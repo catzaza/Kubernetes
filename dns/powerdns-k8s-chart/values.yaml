@@ -1,7 +1,8 @@
 auth:
-  enabled: false
+  enabled: true
   numberOfAuthServerReplicas: 1
 recursor:
-  args:
-    - "--forward-zones=kaubalegacy=127.0.0.1,*=1.1.1.1"
-    - "--local-port=9053"
+  enabled: true
+  args: '"--forward-zones=kaubalegacy=10.104.218.117:9053,*=1.1.1.1", "--local-port=9053"'
+mysql:
+  enabled: true

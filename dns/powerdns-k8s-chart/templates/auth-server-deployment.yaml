@@ -2,8 +2,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
-  namespace: {{ template "powerdns-k8s-chart.name" . }}-dns
+  name: powerdns-server
+  namespace: dns-dev
 spec:
   selector:
     matchLabels:
@@ -39,4 +39,5 @@ spec:
           value: '3306'
         - name: MYSQL_HOST
           value: pdns-mysql
+        args: [ "--local-port=9053", "--launch=gmysql,gsqlite3", "--gmysql-host=mysql-server", "--gmysql-user=root", "--gmysql-password=password"]
 {{- end}}

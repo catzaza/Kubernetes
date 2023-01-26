@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: auth-server
+    namespace: dns-dev
+spec:
+    selector:
+        app: powerdns-server
+    ports:
+    - name: auth-dns
+      protocol: UDP
+      port: 9053
+      targetPort: 9053
