@@ -13,13 +13,12 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 control-plane
-sudo kubeadm join k8s.kaubalegacy.com:6443 --token nm9mkb.z0ntvax22wczz3qs \
---discovery-token-ca-cert-hash sha256:f888dda5124da815958b2eff89c83f4003a8d49d2c28a6c19922ecd869e709e4 \
---control-plane --certificate-key 858b92c1cc89cfa845cfa6c11e73ffe7999d6c8cd0239295fd93298c9d06f2b0
+sudo kubeadm join k8s.kaubalegacy.com:6443 --token 9nfx31.coq16nu73s7z7psk \
+--discovery-token-ca-cert-hash sha256:29983acc7347f8431c5fddcdcb4390b0cb7acfa2fb99ac7efc13119f967fc59a \
+--control-plane --certificate-key db9168dfe224f5c23a033738e4e55a79ae15165b1da78b7289ff92283f0a2954
 	
 worker node
-sudo kubeadm join k8s.kaubalegacy.com:6443 --token nm9mkb.z0ntvax22wczz3qs \
---discovery-token-ca-cert-hash sha256:f888dda5124da815958b2eff89c83f4003a8d49d2c28a6c19922ecd869e709e4
+sudo kubeadm join k8s.kaubalegacy.com:6443 --token 9nfx31.coq16nu73s7z7psk --discovery-token-ca-cert-hash sha256:29983acc7347f8431c5fddcdcb4390b0cb7acfa2fb99ac7efc13119f967fc59a
 	
 	
 

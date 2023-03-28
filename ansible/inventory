@@ -5,7 +5,7 @@ kube-node2 ansible_host=192.168.57.3
 kube-master2 ansible_host=192.168.57.4
 kube-node3 ansible_host=192.168.57.5
 kube-node4 ansible_host=192.168.57.6
-kube-master3 ansible_host=192.168.57.7
+#kube-master3 ansible_host=192.168.57.7
 
 
 [all:vars]
@@ -17,7 +17,7 @@ ansible_python_interpreter='/usr/bin/env python3'
 [kube-master]
 kube-master1
 kube-master2
-kube-master3
+#kube-master3
 
 [kube-node]
 kube-node1
