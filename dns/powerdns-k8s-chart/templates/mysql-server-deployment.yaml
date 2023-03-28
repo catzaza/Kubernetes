@@ -33,4 +33,6 @@ spec:
           value: password
         - name: MARIADB_DATABASE
           value: powerdns
+        - name: MARIADB_DATABASE
+          value: pda
 {{- end}}

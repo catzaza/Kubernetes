@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pdns-admin-web
+  namespace: dns-dev
+spec:
+  selector:
+    app: powerdns-admin
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+    name: admin-web

@@ -1,0 +1,32 @@
+{{- if .Values.admin.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: powerdns-admin
+  namespace: dns-dev
+spec:
+  selector:
+    matchLabels:
+      app: powerdns-admin
+  template:
+    metadata:
+      labels:
+        app: powerdns-admin
+    spec:
+      containers:
+      - name: pdns-admin
+        image: powerdnsadmin/pda-legacy:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - name: admin-web
+          containerPort: 80
+          protocol: TCP
+        env:
+        - name: SQLALCHEMY_DATABASE_URI
+          value: mysql://root:password@mysql-server:3306/pda
+        - name: SECRET_KEY
+          value: password
+{{- end}}
