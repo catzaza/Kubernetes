@@ -3,8 +3,6 @@ kind: IngressRoute
 metadata:
   name: dashboard
 spec:
-  entryPoints:
-    - web
   routes:
     - match: Host(`traefik.kaubalegacy.com`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
       kind: Rule
